@@ -4,7 +4,7 @@
 			<text class="title">{{title}}</text>
 		</view>
 
-		<tab-bar :selected="0"></tab-bar>
+		<tab-bar :selected="2"></tab-bar>
 	</view>
 </template>
 
@@ -12,7 +12,7 @@
 	export default {
 		data() {
 			return {
-				title: 'Hello'
+				title: '2222'
 			}
 		},
 		onLoad() {

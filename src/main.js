@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import App from './App'
+import TabBar from './components/TabBar.vue'
 
 Vue.config.productionTip = false
+Vue.component('tab-bar',TabBar)
 
 App.mpType = 'app'
 

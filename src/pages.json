@@ -1,12 +1,59 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
+			"path": "pages/mine/mine",
+			"style": {
+				"navigationBarTitleText": "uni-app"
+			}
+		},
+		{
 			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "uni-app"
+			}
+		},
+		{
+			"path": "pages/cate/cate",
+			"style": {
+				"navigationBarTitleText": "uni-app"
+			}
+		},
+		{
+			"path": "pages/cart/cart",
 			"style": {
 				"navigationBarTitleText": "uni-app"
 			}
 		}
 	],
+	"tabBar": {
+		"custom": true,
+		"list": [
+			{
+				"iconPath": "static/images/tab/t1.png",
+				"selectedIconPath": "static/images/tab/t1-c.png",
+				"pagePath": "pages/index/index",
+				"text": "首页"
+			},
+			{
+				"iconPath": "static/images/tab/t2.png",
+				"selectedIconPath": "static/images/tab/t2-c.png",
+				"pagePath": "pages/cate/cate",
+				"text": "分类"
+			},
+			{
+				"iconPath": "static/images/tab/t3.png",
+				"selectedIconPath": "static/images/tab/t3-c.png",
+				"pagePath": "pages/cart/cart",
+				"text": "购物车"
+			},
+			{
+				"iconPath": "static/images/tab/t4.png",
+				"selectedIconPath": "static/images/tab/t4-c.png",
+				"pagePath": "pages/mine/mine",
+				"text": "个人中心"
+			}
+		]
+	},
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
