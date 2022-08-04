@@ -23,35 +23,94 @@
 			</view>
 		</view>
 		<view class="area-2">
-			<view class="navbar">
-				<view class="nav-item"></view>
-				<view class="nav-item"></view>
-			</view>
-			<view class="list">
-				<view class="list-item"></view>
-			</view>
+			<nav-bar :currentList="currentList[currentIndex]" :navbarList="navbarList" :currentIndex="currentIndex"
+				@changeFunc="changeNavbar()"></nav-bar>
 		</view>
 		<tab-bar :selected="3"></tab-bar>
 	</view>
 </template>
 
 <script>
+import NavBar from '@/components/NavBar.vue'
 export default {
+	components:{
+		NavBar
+	},
 	data() {
 		return {
-			title: '1'
+			title: '1',
+			currentIndex:0,
+			navbarList:['我的藏品','喜欢'],
+			currentList:[
+				[
+					{
+						tit: 'MYMETA-猿',
+						img: '//www1.pconline.com.cn/zt/gz20200803/picture/tx2.jpg',
+						price: '￥12.00',
+						owner: 'MYMETA',
+						avatar: '//www1.pconline.com.cn/zt/gz20200803/picture/tx1.jpg'
+					},
+					{
+						tit: 'MYMETA-泡泡男孩',
+						img: '//www1.pconline.com.cn/zt/gz20200803/picture/tx1.jpg',
+						price: '￥12.00',
+						owner: 'MYMETA',
+						avatar: '//www1.pconline.com.cn/zt/gz20200803/picture/tx1.jpg'
+					},
+					{
+						tit: 'MYMETA-猿',
+						img: '//www1.pconline.com.cn/zt/gz20200803/picture/tx2.jpg',
+						price: '￥12.00',
+						owner: 'MYMETA',
+						avatar: '//www1.pconline.com.cn/zt/gz20200803/picture/tx1.jpg'
+					},
+					{
+						tit: 'MYMETA-泡泡男孩',
+						img: '//www1.pconline.com.cn/zt/gz20200803/picture/tx1.jpg',
+						price: '￥12.00',
+						owner: 'MYMETA',
+						avatar: '//www1.pconline.com.cn/zt/gz20200803/picture/tx1.jpg'
+					},
+				],
+				[
+					{
+						tit: 'MYMETA-泡泡男孩',
+						img: '//www1.pconline.com.cn/zt/gz20200803/picture/tx1.jpg',
+						price: '￥12.00',
+						owner: 'MYMETA',
+						avatar: '//www1.pconline.com.cn/zt/gz20200803/picture/tx1.jpg'
+					},
+					{
+						tit: 'MYMETA-猿',
+						img: '//www1.pconline.com.cn/zt/gz20200803/picture/tx2.jpg',
+						price: '￥12.00',
+						owner: 'MYMETA',
+						avatar: '//www1.pconline.com.cn/zt/gz20200803/picture/tx1.jpg'
+					},
+					{
+						tit: 'MYMETA-泡泡男孩',
+						img: '//www1.pconline.com.cn/zt/gz20200803/picture/tx1.jpg',
+						price: '￥12.00',
+						owner: 'MYMETA',
+						avatar: '//www1.pconline.com.cn/zt/gz20200803/picture/tx1.jpg'
+					},
+				]
+			],
 		}
 	},
 	onLoad() {
 
 	},
 	methods: {
-
+		changeNavbar(i){
+			this.currentIndex = i;
+		}
 	}
 }
 </script>
 
 <style lang="scss">
+
 @import '@/static/css/variable.scss';
 $bgPath: '../../static/images/';
 
@@ -60,13 +119,14 @@ $bgPath: '../../static/images/';
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	padding-bottom: 138.462rpx;
 
 	.area-1 {
 		width: 750rpx;
 		height: 850rpx;
 		background-color: #fff;
 		border-radius: 0 50rpx 50rpx 0;
-		box-shadow: 8px 1px 10px 10px #f1f1f1;
+		box-shadow: 15.385rpx 1.923rpx 19.231rpx 19.231rpx #f1f1f1;
 		position: relative;
 
 		.banner {
@@ -87,7 +147,7 @@ $bgPath: '../../static/images/';
 					width: 10rpx;
 					height: 10rpx;
 					background-color: #F96900;
-					border: 1px solid #fff;
+					border: 1.923rpx solid #fff;
 					border-radius: 50%;
 					position: absolute;
 					right: 6rpx;
@@ -103,7 +163,7 @@ $bgPath: '../../static/images/';
 		.avatar {
 			width: 200rpx;
 			height: 200rpx;
-			border: 5px solid #fff;
+			border: 9.615rpx solid #fff;
 			border-radius: 50%;
 			overflow: hidden;
 			position: absolute;
@@ -153,6 +213,10 @@ $bgPath: '../../static/images/';
 				}
 			}
 		}
+	}
+
+	.area-2 {
+		padding-top: 61.538rpx;
 	}
 }
 </style>
